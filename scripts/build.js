@@ -58,7 +58,8 @@ const resolve = require("./rollup-plugin/resolve")
 
     const dependencySet = new Set()
     const bundle = await rollup.rollup({
-        experimentalCodeSplitting: true,
+        // experimentalCodeSplitting: true,
+        experimentalCodeSplitting: false,
         input: [
             "scripts/shim/linter.js",
             "scripts/shim/core-rules.js",
