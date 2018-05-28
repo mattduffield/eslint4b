@@ -1,5 +1,5 @@
 {
-  "name": "eslint4b",
+  "name": "@mattduffield/eslint4b",
   "version": "1.0.0",
   "description": "ESLint which works in browsers.",
   "engines": {
