@@ -10,6 +10,8 @@ const log = require("fancy-log")
 const fs = require("fs-extra")
 const rollup = require("rollup")
 const commonjs = require("rollup-plugin-commonjs")
+const amd = require("rollup-plugin-amd")
+const lookup = require("module-lookup-amd")
 const json = require("rollup-plugin-json")
 const modify = require("rollup-plugin-re")
 const sourcemaps = require("rollup-plugin-sourcemaps")
@@ -96,6 +98,7 @@ const resolve = require("./rollup-plugin/resolve")
             }),
             json({ preferConst: true }),
             commonjs(),
+            // amd(),
             sourcemaps(),
         ],
     })
@@ -105,6 +108,8 @@ const resolve = require("./rollup-plugin/resolve")
 
     const contents = await bundle.generate({
         format: "cjs",
+        // format: "amd",
+        // format: "system",
         sourcemap: true,
     })
 
